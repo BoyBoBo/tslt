@@ -14,7 +14,6 @@ const cli = commandLineArgs([
   { name: 'dest', alias: 'd', type: String},
   { name: 'template', alias: 't', type: String },
   { name: 'templateStr', alias: 'T', type: String },
-  { name: 'zip', alias: 'z', type: String },
   { name: 'global', alias: 'g', type: String, defaultValue: '$' },
   { name: 'delimiter', alias: 'D', type: String, defaultValue: '%' },
   { name: 'help', alias: 'h' }
@@ -39,10 +38,6 @@ const optionDefinitions = [
   {
     name: 'templateStr', description: 'The EJS template string',
     alias: 'T', type: String, typeLabel: '[underline]{String}'
-  },
-  {
-    name: 'zip', description: 'The input zip file to process',
-    alias: 'z', type: String, typeLabel: '[underline]{file}'
   },
   {
     name: 'global', description: 'global variable. default is $',

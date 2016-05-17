@@ -124,6 +124,7 @@ if(help) {
       .then(function(texts){
         var merged = {};
         texts.forEach(function(text){
+          text = text.trim();
           var singleData = JSON.parse(text);
           for(var k in singleData) {
             merged[k] = singleData[k];
@@ -135,9 +136,11 @@ if(help) {
       });
     } else {
       srcContent = fs.readFileSync(src).toString(); 
+      srcContent = srcContent.trim();
       convert(JSON.parse(srcContent));
     }
 	} else if(srcStr){
+    srcStr = srcStr.trim();
     convert(JSON.parse(srcStr));
 	} else {
 		console.error('no input data');
